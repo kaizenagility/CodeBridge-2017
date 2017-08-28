@@ -1,0 +1,8 @@
+var a = 5 + 444;
+var b = "Jay-z";
+var c = 1*18+2+3;
+var d = "has" + c + "allbums";
+var e = 5 + 10 *  1000;
+var z = b + d + c;
+
+console.log(z);

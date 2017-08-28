@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		* {
+			margin, padding: 0px;
+		}
+		form {
+			text-align: left;
+			background-color: gold;
+			width: 200px;
+			padding: 15px;
+			padding-bottom: 35px;
+			line-height: 30px;
+			border: 2px solid black;
+			box-shadow: 10px 10px 5px #888888;
+		}
+		input[type=text]:focus {
+			background-color: skyblue;
+			color: gray;
+			transition: 1s;
+		}
+		input[type=radio]:focus {
+			background-color: skyblue;
+		}
+		#submit {
+			box-shadow: 2px 2px 2px #888888;
+		}
+		#submit:hover {
+			background-color: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<form>
+	<h3> Please fill out this form. </h3>
+	<input type="text" name="FirstName" placeholder="First Name" :focus> <br>
+	<input type="text" name="LastName" placeholder="Last Name" :focus> <br>
+	<input type="radio" name=gender value="Female"> Female <br>
+	<input type="radio" name=gender value="Male"> Male <br>
+	<input type="radio" name=gender value="Other"> Other <br>
+	<input type="button" name="Submit" value="Submit" id="submit">
+	</form>
+</body>
+</html>

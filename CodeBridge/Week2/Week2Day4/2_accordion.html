@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		* {
+			font-family: Arial, sans-serif;
+			margin, padding: 0;
+		}
+		.parent{
+			display: flex;
+		}
+		.babydiv {
+			flex: 1;
+			border: 1px;
+			height: 300px;
+			text-align: center;
+			font-size: 30px;
+			color: white;
+			padding-top: 30px;
+		}
+		.babydiv:hover {
+			flex: 3;
+			transition: 2s;
+		}
+		#d1 {
+			background-color: red;
+		}
+		#d2 {
+			background-color: orange;
+		}
+		#d3 {
+			background-color: yellow;
+		}
+		#d4 {
+			background-color: green;
+		}
+		#d5 {
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="babydiv" id="d1">1</div>
+		<div class="babydiv" id="d2">2</div>
+		<div class="babydiv" id="d3">3</div>
+		<div class="babydiv" id="d4">4</div>
+		<div class="babydiv" id="d5">5</div>
+	</div>
+</body>
+</html>

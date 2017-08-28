@@ -1,0 +1,10 @@
+var five = 2;
+var a = 5;
+var b = "5";
+var c = five;
+var ans = a+b;
+
+console.log(ans);
+
+var ans2 = c + a;
+console.log(ans2);
