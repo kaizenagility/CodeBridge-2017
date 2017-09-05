@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cyborg Lady Calculates</title>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'> </script>
+    <link rel="stylesheet" type="text/css" href="calculator.css">
+  </head>
+  <body>
+
+
+    <script>
+
+// ======== Average Button ========
+
+      window.average = function average(input) {
+
+        var sum = 0;
+        var avg = 0;
+        var array = [];
+        var number;
+
+        array = input.split("+");
+
+        for (i=0; i<array.length; i++) {
+          number = parseInt(array[i]);
+          sum += number;
+        }
+
+        avg = sum / array.length;
+
+        responsiveVoice.speak("the average is" + avg.toString());
+        return avg;
+      }
+
+// ======== Equals Button  ========
+
+      window.equals = function equals(input) {
+      
+        Calc.Input.value = eval(input)
+        ans = Calc.Input.value
+
+        if (ans >= 0) {
+          responsiveVoice.speak("the answer is" + ans.toString());
+        } else {
+          responsiveVoice.speak("the answer is negative" + ans.toString());
+        }
+        
+        return ans;
+
+      }
+
+// ======== Input Buttons: Numbers and Operators  ========
+
+      window.input = function input(val) {
+        Calc.Input.value += val;
+        responsiveVoice.speak(val.toString())
+      }
+
+      // Special Operator Inputs (for Text-to-Speech purposes)
+
+      window.input_plus = function input_plus(val) {
+        Calc.Input.value += val;
+        responsiveVoice.speak("plus")
+      }
+
+      window.input_minus = function input_minus(val) {
+        Calc.Input.value += val;
+        responsiveVoice.speak("minus")
+      }
+
+      window.input_times = function input_times(val) {
+        Calc.Input.value += val;
+        responsiveVoice.speak("times")
+      }
+
+      window.input_divide = function input_divide(val) {
+        Calc.Input.value += val;
+        responsiveVoice.speak("divided by")
+      }
+
+      window.input_point = function input_point(val) {
+        Calc.Input.value += val;
+        responsiveVoice.speak("point")
+      }
+
+      window.input_clear = function input_clear(val) {
+        Calc.Input.value = ' ';
+        responsiveVoice.speak("cleared")
+      }
+
+      
+    </script>
+
+<!-- ================ CALCULATOR ================ -->
+
+    <form name = "Calc">
+      <table cellspacing = "4">
+
+        <!-- First Row: Clear Button and Display -->
+
+        <tr>
+          <td>
+            <input type="button" name="clear" class="operator" value="c" onclick="window.input_clear()">
+          </td>
+          <th id="display" colspan="3">
+            <input type="text" name="Input" size="10" font-color="green">
+          </th>
+        </tr>
+
+        <!-- Second Row: Keys -->
+
+        <tr>
+          <td>
+            <input type="button" name="seven" class="number" value="7" onclick="window.input(7)">
+          </td>
+          <td>
+            <input type="button" name="eight" class="number" value="8" onclick="window.input(8)">
+          </td>
+          <td>
+            <input type="button" name="nine" class="number" value="9" onclick="window.input(9)">
+          </td>
+          <td>
+            <input type="button" name="plus" class="operator" value="+" onclick="window.input_plus('+')">
+          </td>
+        </tr>
+
+        <!-- Third Row: Keys -->
+
+        <tr>
+          <td>
+            <input type="button" name="seven" class="number" value="4" onclick="window.input(4)">
+          </td>
+          <td>
+            <input type="button" name="eight" class="number" value="5" onclick="window.input(5)">
+          </td>
+          <td>
+            <input type="button" name="nine" class="number" value="6" onclick="window.input(6)">
+          </td>
+          <td>
+            <input type="button" name="minus" class="operator" value="-" onclick="window.input_minus('-')">
+          </td>
+        </tr>
+
+        <!-- Fourth Row: Keys -->
+
+        <tr>
+          <td>
+            <input type="button" name="one" class="number" value="1" onclick="window.input(1)">
+          </td>
+          <td>
+            <input type="button" name="two" class="number" value="2" onclick="window.input(2)">
+          </td>
+          <td>
+            <input type="button" name="three" class="number" value="3" onclick="window.input(3)">
+          </td>
+          <td>
+            <input type="button" name="times" class="operator" value="*" onclick="window.input_times('*')">
+          </td>
+        </tr>
+
+        <!-- Fifth Row: Keys -->
+
+        <tr>
+          <td>
+            <input type="button" name="zero" class="number" value="0" onclick="window.input(0)">
+          </td>
+          <td colspan="2">
+            <input type="button" name="dot" class="operator" value="." onclick="window.input_point('.')">
+          </td>
+          <td>
+            <input type="button" name="divide" class="operator" value="/" onclick="window.input_divide('/')">
+          </td>
+        </tr>
+
+        <!-- Sixth Row: Average and Equals -->
+
+        <tr>
+          <td colspan="2">
+            <!-- Need to make this average button function. -->
+            <input type="button" name="average" class="evaluator" value="avg" onclick="Calc.Input.value = window.average(Calc.Input.value)">
+          </td>
+          <td colspan="2">
+            <input type="button" name="equals" class="evaluator" value="=" onclick="window.equals(Calc.Input.value)">
+          </td>
+        </tr>
+
+      </table>
+    </form>
+
+
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <input id="a" type="text">
+      <input id="b" type="text"><br>
+      <input type="button" onclick="sum()" value="Add">
+      <!-- <input type="button" onclick="difference()" value="Subtract">
+      <input type="button" onclick="product()" value="Multiply">
+      <input type="button" onclick="quotient()" value="Divide"> -->
+    </div>
+
+    <script type = "type/javascript">
+
+    var a, b, result;
+
+    function setValues(){
+      a = Number(document.getElementById('a').value);
+      b = Number(document.getElementById('b').value);
+    }
+
+    function sum(){
+        setValues();
+        result = a+b;
+        alert("The sum is equal to "+ result);
+      }
+    //
+    // function difference(){
+    //     setValues();
+    //     result = a-b;
+    //     alert("The difference is equal to "+ result);
+    //   }
+    //
+    // function product(){
+    //     setValues();
+    //     result = a*b;
+    //     alert("The product is equal to "+ result);
+    //   }
+    //
+    // function quotient(){
+    //     setValues();
+    //     result = a/b;
+    //     alert("The quotient is equal to "+ result);
+    //   }
+    // }
+
+    </script>
+  </body>
+</html>

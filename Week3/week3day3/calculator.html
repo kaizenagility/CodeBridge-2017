@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+	<title>Kai's Calculator</title>
+	<style> 
+		* {
+			font: bold 35px Arial, sans-serif;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+		}
+		html {
+			width, height: 100%;
+			background: white;
+			background: radial-gradient(#b3cde0, #6497b1 75%);
+			background-size: cover;
+		}
+		table, tb {
+			background: linear-gradient(#a3c1ad,#88d8b0);
+			height: auto;
+			width: 350px;
+			margin: 100px auto;
+			padding: 55px 30px 25px;
+			border: 2px #011f4b;
+			border-radius: 15px;
+			box-shadow: inset 0px 20px rgba(0,0,0,0.2);
+			color: white;
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+			text-align: right;
+			cursor: pointer;
+		}
+		th {
+			background: linear-gradient(#555555,#333333);
+			height: 40px;
+			padding-right: 15px;
+			border-radius: 15px;
+			box-shadow: inset 0px 5px rgba(0,0,0,0.2);
+			color: #adff00;
+		}
+
+		td {
+			background: white;
+			margin: 0 7px 11px 0;
+			padding: 15px;
+			border-radius: 15px;
+			box-shadow: 0px 5px rgba(0,0,0,0.2);
+			color: #854442;
+			text-align: center;
+		}
+		td:hover {
+			background: #ffb3ba;
+			color: white;
+		}
+		td:active {
+			background: #fb9f9f;
+			box-shadow: inset 0px 5px rgba(0,0,0,0.2);
+		}
+		#clear {
+			background: linear-gradient(#ff6f69,#d9534f);
+			color: white;
+		}
+		#clear:hover {
+			color: brown;
+		}
+		#clear:active {
+			background: linear-gradient(#ff6f69,#e0301e);
+			box-shadow: inset 0px 5px rgba(0,0,0,0.2);
+			color: white;
+		}
+		#operator {
+			background: linear-gradient(#ffcc5c,#f37735);
+		}
+		#operator:active {
+			background: linear-gradient(#dd855c,#dc6900);
+		}
+		#input {
+			background: transparent;
+			color: #adff00;
+			border: 0px;
+			text-align: right;
+		}
+		.speech {border: 1px solid #DDD; width: 300px; padding: 0; margin: 0}
+  		.speech input {border: 0; width: 240px; display: inline-block; height: 30px;}
+  		.speech img {float: right; width: 40px }
+	</style>
+</head>
+<body>
+
+	<script>
+  function startDictation() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('transcript').value
+                                 = e.results[0][0].transcript;
+        recognition.stop();
+        document.getElementById('labnol').submit();
+      };
+
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  }
+</script>
+
+	<FORM NAME="Calc">
+	<table cellspacing="6">
+		<tr>
+			<td id="clear"> C </td>
+			<td id="clear"> Avg </td>
+			<th colspan="2"><INPUT TYPE="text" NAME="input" Size="9" id="input"></th>
+		</tr>
+		<tr>
+			<td><INPUT TYPE="button" NAME="seven" VALUE="" OnClick="Calc.Input.value +='7'">
+			<input onclick='responsiveVoice.speak("7");' type='button' value='7' /> </td>
+			<td> 8 </td>
+			<td> 9 </td>
+			<td id="operator"> x </td>
+		</tr>
+		<tr>
+			<td> 4 </td>
+			<td> 5 </td>
+			<td> 6 </td>
+			<td id="operator"> + </td>
+		</tr>
+		<tr>
+			<td> 1 </td>
+			<td> 2 </td>
+			<td> 3 </td>
+			<td id="operator"> - </td>
+		</tr>
+		<tr>
+			<td> 0 </td>
+			<td id="clear" colspan="2"> = </td>
+			<td id="operator"> / </td>
+		</tr>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+* {
+	font: bold 35px Arial, sans-serif;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+}
+
+html {
+	width, height: 100%;
+	background-image: url("https://davescomputertips.com/wp-content/uploads/2015/09/robot-woman-android.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+form {
+	background: transparent;
+}
+
+table, tb {
+	background: linear-gradient(#a3c1ad,#88d8b0);
+	height: auto;
+	float: right;
+	width: 350px;
+	margin-top: 20px;
+	margin-right: 150px;
+	padding: 55px 30px 25px;
+	border: 2px #011f4b;
+	border-radius: 15px;
+	box-shadow: inset 0px 20px rgba(0,0,0,0.2);
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	text-align: right;
+	cursor: pointer;
+}
+
+input[type=text] {
+	padding: 12px 20px;
+	margin: 12px 12px;
+	text-align: right;
+	color: green;
+	background: black;
+	opacity: 0.7;
+	font-family: Courier;
+	border-radius: 10px;
+	font-size: 45px;
+	box-shadow: inset 0px 5px rgba(0,0,0,0.2);
+}
+
+.operator {
+	background: linear-gradient(#ff6f69,#d9534f);
+	margin: 0 7px 11px 0;
+	padding: 15px;
+	border-radius: 15px;
+	box-shadow: 0px 5px rgba(0,0,0,0.2);
+	color: white;
+	text-align: center;
+	width: 80px;
+}
+
+.operator:hover {
+	color: green;
+}
+
+.operator:active {
+	background: linear-gradient(pink,#ff6f69);
+}
+
+.number {
+	background: gold;
+	/*margin: 0 7px 11px 0;*/
+	padding: 15px;
+	border-radius: 15px;
+	box-shadow: 0px 5px rgba(0,0,0,0.2);
+	color: black;
+	text-align: center;
+	width: 80px;
+}
+
+
+.number:hover {
+	background: green;
+	color: white;
+}
+
+.number:active {
+	background: linear-gradient(white, yellow);
+	color: green;
+	box-shadow: inset 0px 5px rgba(0,0,0,0.2);
+}
+
+.evaluator {
+	background: #80AE73;
+	color: black;
+	text-shadow: white;
+	padding: 15px;
+	border-radius: 15px;
+	box-shadow: 0px 5px rgba(0,0,0,0.2);
+	width: 180px;
+}
+
+.evaluator:hover {
+	color: gold;
+}
+
+.evaluator:active {
+	background: linear-gradient(#C4F3FF, #80AE73);
+	color: green;
+}
